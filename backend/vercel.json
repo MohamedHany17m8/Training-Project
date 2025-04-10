@@ -7,7 +7,7 @@
       "config": {
         "includeFiles": [
           "lib/**",
-          "middleware/**",
+          "middleware/**", 
           "models/**",
           "controllers/**",
           "routes/**"

@@ -12,7 +12,7 @@ import testRoutes from "./routes/test.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const app = express();
+const app = express(); 
 const PORT = process.env.PORT || 5000;
 const FRONTEND_URL =
   process.env.NODE_ENV === "production"
@@ -32,9 +32,12 @@ app.use(
   })
 );
 
+// Add favicon handler before static files middleware
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 // Handle preflight requests
 app.options("*", cors());
-app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the request
+app.use(express.json({ limit: "10mb" }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Use routes
