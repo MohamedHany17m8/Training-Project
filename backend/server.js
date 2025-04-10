@@ -3,7 +3,7 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
-import dotenv from "dotenv"; 
+import dotenv from "dotenv";
 dotenv.config();
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
@@ -12,11 +12,11 @@ import testRoutes from "./routes/test.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const app = express(); 
+const app = express();
 const PORT = process.env.PORT || 5000;
 const FRONTEND_URL =
   process.env.NODE_ENV === "production"
-    ? "https://voting-mern.vercel.app"
+    ? "https://training-project-zeta.vercel.app"
     : "http://localhost:3000";
 // Connect to MongoDB
 
@@ -24,7 +24,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? "https://voting-mern.vercel.app"
+        ? "https://training-project-zeta.vercel.app"
         : "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -33,7 +33,7 @@ app.use(
 );
 
 // Add favicon handler before static files middleware
-app.get('/favicon.ico', (req, res) => res.status(204).end());
+app.get("/favicon.ico", (req, res) => res.status(204).end());
 
 // Handle preflight requests
 app.options("*", cors());

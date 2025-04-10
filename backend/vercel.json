@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js", 
+      "src": "server.js",
       "use": "@vercel/node",
       "config": {
         "includeFiles": [
           "lib/**",
-          "middleware/**", 
+          "middleware/**",
           "models/**",
           "controllers/**",
           "routes/**"
@@ -31,7 +31,7 @@
   ],
   "env": {
     "PORT": "5000",
-    "FRONTEND_URL": "https://voting-mern.vercel.app",
+    "FRONTEND_URL": "https://training-project-zeta.vercel.app",
     "NODE_ENV": "production",
     "MONGODB_URI": "mongodb+srv://mhany6921:EeCbqFQ38BPgCt1f@training.ehsom8n.mongodb.net/?retryWrites=true&w=majority&appName=Training"
   }

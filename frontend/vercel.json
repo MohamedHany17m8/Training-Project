@@ -7,7 +7,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://voting-mern-api.vercel.app/api/$1"
+      "destination": "https://training-project-api.vercel.app/api/$1"
     },
     {
       "source": "/(.*)",
