@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js", 
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "lib/**",
+          "middleware/**",
+          "models/**",
+          "controllers/**",
+          "routes/**"
+        ],
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.js",
+      "headers": {
+        "Cache-Control": "s-maxage=0"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ],
+  "env": {
+    "PORT": "5000",
+    "FRONTEND_URL": "https://voting-mern.vercel.app",
+    "NODE_ENV": "production",
+    "MONGODB_URI": "mongodb+srv://mhany6921:EeCbqFQ38BPgCt1f@training.ehsom8n.mongodb.net/?retryWrites=true&w=majority&appName=Training"
+  }
+}
